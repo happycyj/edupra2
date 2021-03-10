@@ -1,0 +1,8 @@
+*{
+    font-size:20px;
+    line-height: 1.5em;
+}
+.selection{
+    border:1px solid grey;
+    background-color: lightskyblue;
+}
