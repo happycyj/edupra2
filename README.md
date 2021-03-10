@@ -3,6 +3,7 @@
 # 版本信息
 ## 当前版本：乾
 ## （本软件使用六十四卦顺序作为版本号）
+## 授权协议：MIT
 # 构成
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在本系统中，所有题目及与其的交互使用Paper类进行管理。通过Paper类，你可以方便地添加题目。Paper类的构造函数需要一个用于显示题目内容的HTML元素。
 ## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体的题目管理，则由_Question类负责。同时为了能够较为准确地显示图片、代码和大块文字等的内容，使用_Resource作为附加资源进行管理。
