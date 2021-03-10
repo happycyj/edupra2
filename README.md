@@ -10,7 +10,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src子目录为该程序（src.js）和Demo（main.js）的源代码，预留目录dist和tools分别为src.js的压缩版本和相关工具，例如将csv文件转换为相应的JavaScript代码，这些内容以后再写
 # 使用
     let p=new Paper(document.getElementById("app")); // 新建练习册
-    ## p.addQue(1,"题目",["选项1",0,"选项2",1],该题满分); // 第一个参数为题目类型，数组中的数字是对应选项的赋分
+    p.addQue(1,"题目",["选项1",0,"选项2",1],该题满分); // 第一个参数为题目类型，数组中的数字是对应选项的赋分
     p.start(); // 从欢迎页开始显示
 # 题目类型和说明
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(当前版本仅支持类型1、3、5、6,且有部分功能未完善)  
