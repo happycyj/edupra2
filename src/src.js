@@ -62,7 +62,7 @@ class _Question{
                 tmp+=arr[i];
                 tmp+=`<span style="font-style:italic;text-decoration:underline;font-weight:bolder">&nbsp;&nbsp;&nbsp;${i+1}&nbsp;&nbsp;&nbsp;</span>`;
             }
-            dst=tmp;
+            dst=tmp+arr[arr.length-1];
         }
         
         return dst;
