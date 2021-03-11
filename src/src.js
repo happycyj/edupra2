@@ -307,7 +307,7 @@ class Paper{
     readCSV(csv_str){
         // 解析字符串类型的csv格式，并自动添加到que的问题集中
         // 一般，使用半角逗号作为csv的分隔符，使用\,表示转义
-        // 前两行忽略
+        // 前两行分别是欢迎页和结束页
         let lines=csv_str.split("\n");
         for(let i=2;i<lines.length;i++){
             let line=lines[i].replace(/\\,/g,"$_comma");
@@ -352,11 +352,19 @@ class Paper{
             // 详细解释
             if(line[line.length-1]!=undefined)
                 details=line[line.length-1].replace(/$comma/g,",");
+            else
+                details="暂无";
             
             // 添加到习题集中
             this.addQue(qtype,title,answer,details);
         }
-        
+ 
+        // 第一行，欢迎页
+        let first=lines[0];
+        this.setIndexPage(first.split(","));
+        // 第二行，结束页
+        let last=lines[1];
+        this.setLastPage(last.split(","));
         // 测试用，函数内
         console.log(this.que.questions);
     }
