@@ -304,4 +304,60 @@ class Paper{
         }
         return score;
     }
+    readCSV(csv_str){
+        // 解析字符串类型的csv格式，并自动添加到que的问题集中
+        // 一般，使用半角逗号作为csv的分隔符，使用\,表示转义
+        // 前两行忽略
+        let lines=csv_str.split("\n");
+        for(let i=2;i<lines.length;i++){
+            let line=lines[i].replace(/\\,/g,"$_comma");
+            line=line.split(","); // 一行代表一个问题
+
+            let qtype=5,title,answer,details;
+            switch(line[0]){
+                // 类型
+                case "单项选择":
+                    qtype=1;
+                    break;
+                case "多项选择":
+                    qtype=2;
+                    break;
+                case "客观填空":
+                    qtype=3;
+                    break;
+                case "简答":
+                    qtype=5;
+                    break;
+                case "解答":
+                    qtype=6;
+                    break;
+            }
+            // 问题内容
+            title=line[1];
+            if(qtype==1 || qtype==3){
+                answer=[];
+                for(let i=2;i<line.length-1;i++){
+                    if(i%2==0){
+                        // 参考答案
+                        answer.push(line[i].replace(/$comma/g,","));
+                    }else{
+                        // 赋分
+                        answer.push(parseInt(line[i]));
+                    }
+                }
+            }else{
+                if(line[2]!=undefined)
+                    answer=line[2].replace(/$comma/g,",");
+            }
+            // 详细解释
+            if(line[line.length-1]!=undefined)
+                details=line[line.length-1].replace(/$comma/g,",");
+            
+            // 添加到习题集中
+            this.addQue(qtype,title,answer,details);
+        }
+        
+        // 测试用，函数内
+        console.log(this.que.questions);
+    }
 }
