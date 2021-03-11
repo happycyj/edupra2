@@ -309,7 +309,7 @@ class Paper{
         // 一般，使用半角逗号作为csv的分隔符，使用\,表示转义
         // 前两行分别是欢迎页和结束页
         let lines=csv_str.split("\n");
-        for(let i=2;i<lines.length;i++){
+        for(let i=2;i<lines.length-1;i++){
             let line=lines[i].replace(/\\,/g,"$_comma");
             line=line.split(","); // 一行代表一个问题
 
@@ -336,13 +336,22 @@ class Paper{
             title=line[1];
             if(qtype==1 || qtype==3){
                 answer=[];
-                for(let i=2;i<line.length-1;i++){
-                    if(i%2==0){
+                //Debug
+                if(i==5){
+                    console.log(line);
+                }
+                //Debug
+                for(let j=2;j<line.length-1;j++){
+                    if(line[j]==""){
+                        break;
+                    }
+
+                    if(j%2==0){
                         // 参考答案
-                        answer.push(line[i].replace(/$comma/g,","));
+                        answer.push(line[j].replace(/$comma/g,","));
                     }else{
                         // 赋分
-                        answer.push(parseInt(line[i]));
+                        answer.push(parseInt(line[j]));
                     }
                 }
             }else{

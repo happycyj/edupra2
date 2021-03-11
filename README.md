@@ -1,5 +1,5 @@
 # 使用说明书
-## &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个电子练习系统，当前的功能较少。里面包含了一个例子。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这是一个电子练习系统，当前的功能较少。里面包含了一个例子。
 # 版本信息
 当前版本：乾
 （本软件使用六十四卦顺序作为版本号）  
@@ -7,7 +7,8 @@
 # 构成
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在本系统中，所有题目及与其的交互使用Paper类进行管理。通过Paper类，你可以方便地添加题目。Paper类的构造函数需要一个用于显示题目内容的HTML元素。  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体的题目管理，则由_Question类负责。同时为了能够较为准确地显示图片、代码和大块文字等的内容，使用_Resource作为附加资源进行管理。  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src子目录为该程序（src.js）和Demo（main.js）的源代码，预留目录dist和tools分别为src.js的压缩版本和相关工具，例如将csv文件转换为相应的JavaScript代码，这些内容以后再写
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;src子目录为该程序（src.js）和Demo（main.js）的源代码，预留目录dist和tools分别为src.js的压缩版本和相关工具，例如将csv文件转换为相应的JavaScript代码，这些内容以后再写  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sets子目录为csv格式的演示用文件，可以使用demo2查看例子。
 # 使用
     let p=new Paper(document.getElementById("app")); // 新建练习册
     p.addQue(1,"题目",["选项1",0,"选项2",1],该题满分); // 第一个参数为题目类型，数组中的数字是对应选项的赋分
