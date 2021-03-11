@@ -25,3 +25,7 @@
 （4）对于简答和解答，不进行判断，得分不累计
 # 特色
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首行缩进；即答即解。
+# CSV文件的说明
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用Paper类的readCSV()方法，便可以自动地从csv格式的字符串中导入，从csv文件导入的例子详见demo2。  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSV文件的格式为：第一行为欢迎页的信息，第二行为最后一页的信息，之后的行中都是练习题。  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于练习题而言，第一列为题目类型，如“单项选择”等，第二列为题目，第三列开始为选项/参考答案和赋分，最后一列为解析。需要注意的一点是，当不同题目的选项数量不同时，解析都是在同一列，简而言之，中间的部分留空。

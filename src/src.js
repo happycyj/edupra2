@@ -101,7 +101,7 @@ class _Question{
     }
     judgeQuestion(qid,sindex){
         // 判断回答正误，并返回得分
-        //console.log("judge");
+        ////console.log("judge");
 
         let que=this.questions[qid-1];
         
@@ -123,7 +123,7 @@ class _Question{
         
         if(this.userscores[qid-1]==-1){
             this.userscores[qid-1]=selAnswer.score;
-            //console.log(`Score+${selAnswer.score}`);
+            ////console.log(`Score+${selAnswer.score}`);
         }
     }
     cannotjudge(qid){
@@ -161,7 +161,7 @@ class _Question{
         if(this.userscores[qid-1]==-1){
             this.userscores[qid-1]=tmpScore;
         }
-        //console.log(`Score+${tmpScore}`);
+        ////console.log(`Score+${tmpScore}`);
 
         //det+=`<p>参考答案：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${que.answer}</p>`;
         det+=`<p>解析：</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${que.details}</p>`;
@@ -179,7 +179,7 @@ class Paper{
         this.lastpage="";
     }
     setIndexPage(content){
-        //console.log(content)
+        ////console.log(content)
         for(let i=0;i<content.length;i++){
             this.indexpage+=`<p style="text-align:center">${content[i]}</p>`;
         }
@@ -199,7 +199,7 @@ class Paper{
             result+=this.lastpage;
             result+=`<p>得分：${this.getTotalScore()}&nbsp;满分：${this.getMaxScore()}</p><p>（仅计算客观题）</p>`;
         }else{
-            //console.log("OK")
+            ////console.log("OK")
             // 显示题目,qid从1开始数，对应
             result+=this.que.parseQuestion(qid);
         }
@@ -278,7 +278,7 @@ class Paper{
             return ques.length;
         }else if(type=="nototal"){
             // 仅包含支持判断的客观题的数量
-            //console.log("No Total")
+            ////console.log("No Total")
             let sum=0;
             for(let i=0;i<ques.length;i++){
                 if(ques[i].qtype=="1" || ques[i].qtype=="3"){
@@ -338,7 +338,7 @@ class Paper{
                 answer=[];
                 //Debug
                 if(i==5){
-                    console.log(line);
+                    //console.log(line);
                 }
                 //Debug
                 for(let j=2;j<line.length-1;j++){
@@ -375,6 +375,6 @@ class Paper{
         let last=lines[1];
         this.setLastPage(last.split(","));
         // 测试用，函数内
-        console.log(this.que.questions);
+        //console.log(this.que.questions);
     }
 }
