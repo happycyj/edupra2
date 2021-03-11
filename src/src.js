@@ -87,7 +87,7 @@ class _Question{
             // 客观填空
             let blanksnum=que.answer.length; // 此时的赋分为每空回答正确可得多少分
             for(let i=0;i<blanksnum;i++){
-                result+=`<p><span>&nbsp;${i+1}&nbsp;</span><input class="blank_answer" /><span class="blank_judge"></span></p>`;   
+                result+=`<p><span>&nbsp;${i+1}&nbsp;</span><input class="blank_answer" style="text-align:center" /><span class="blank_judge"></span></p>`;   
             }
             result+=`<p><button onclick="window.nowque.judgeBlank(${qid})">提交回答</button></p>`;
         }else{
